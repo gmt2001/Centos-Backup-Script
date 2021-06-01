@@ -252,7 +252,7 @@ fi;
 # Start backup
 startBackup
 # Final
-echo
+echoQuiet
 if $showfsz ; then
     df -h
 fi;
