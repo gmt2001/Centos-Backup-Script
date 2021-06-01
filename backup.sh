@@ -105,6 +105,7 @@ function deleteOldBackups {
     do
         deleteOldestBackup $c
     done
+    ls -tp $logdir | tail -n +`expr $1 + 1` | xargs -d '\n' -r rm -rf --
 }
 
 function shiftBackup {
