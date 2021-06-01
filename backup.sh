@@ -172,7 +172,7 @@ function moveBackup {
     if $WRITE_CHANGES ; then
         mkdir $backupdir/0/
         #mv $tempdir/$filename $backupdir/0/ ;
-        mv $tempdir/*$filename $backupdir/0/ ;
+        mv $tempdir/*$filename* $backupdir/0/ ;
         printfQuiet "Ok\n"
     else printfQuiet "Skipping\n"
     fi;
