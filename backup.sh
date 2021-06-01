@@ -158,7 +158,6 @@ function createBackup {
                 tar zcfP $target_backup_file $d > $logdir/$filename.log
     	    fi;
         done
-        break
     done
     echoQuiet "databases"
     if $WRITE_CHANGES && $BACKUP_MYSQL ; then
