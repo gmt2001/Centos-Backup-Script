@@ -67,7 +67,7 @@ function checkLists {
 
 function checkBackupStatus {
     if $BACKUP_DAILY_ONLY_ONCE ; then
-        if [ -f $backupdir/0/$filename ] ; then
+        if [ -f $backupdir/0/$filename.completed ] ; then
             echoQuiet "Backup already exist - try again tomorrow."
             exit;
         fi;
@@ -83,6 +83,7 @@ function createTemporaryFolder {
     printfQuiet "Creating temporary directory.. "
     if $WRITE_CHANGES ; then
         mkdir $tempdir
+        touch $tempdir/$filename.completed
         printfQuiet "Ok\n"
     else printfQuiet "Skipping\n"
     fi;
